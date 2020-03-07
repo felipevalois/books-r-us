@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sell Your Books</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Sell Your Book</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Book Information<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" placeholder="Title"></ion-input>
+        <ion-input required type="text" placeholder="ISBN"></ion-input>
+        <ion-select required type="text" placeholder="Select Status">
+          <ion-select-option>New</ion-select-option>
+          <ion-select-option>Used</ion-select-option>
+          <ion-select-option>E-Book</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Additional notes about the book</ion-label>
+        <ion-textarea type="text"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Your Information</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Address</ion-label>
+        <ion-input type="text" placeholder="Street"></ion-input>
+        <ion-input type="text" placeholder="City"></ion-input>
+        <ion-input type="text" required placeholder="State"></ion-input>
+        <ion-input required type="text" placeholder="Zip Code"><ion-text color="danger">*</ion-text></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="ion-padding">
+        <ion-button (click)="sellBook()" expand="block" type="submit" class="ion-no-margin">Sell My Book</ion-button>
+    </div>
+</ion-content>

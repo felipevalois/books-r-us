@@ -1,0 +1,43 @@
+ion-button img{
+   border-radius: 50%;
+   border: 1px solid black;
+ }
+
+ .userDetails {
+   border-radius: 50%;
+   // border: 1px solid black;
+   background-color: purple;
+   color: white;
+ }
+ 
+.userx{
+   // text-align: center;
+   // line-height: 31px;
+   position: absolute;
+   top: 50%;  /* position the top  edge of the element at the middle of the parent */
+   left: 50%; /* position the left edge of the element at the middle of the parent */
+   font-size: 16px;
+   text-transform: uppercase;
+   transform: translate(-50%, -50%); 
+   // font-family: 'Cabin Sketch', cursive;
+}
+
+.usery{
+   position: absolute;
+   top: 50%; 
+   left: 50%; 
+   // font-size: 18px;
+   transform: translate(-50%, -50%); 
+   // font-family: 'Cabin Sketch', cursive;
+}
+
+.login{
+  border-radius: 5%;
+  // border: 1px solid black;
+  background-color: #2196F3   ;
+  color: white;
+}
+
+ion-button{
+   height: 40px;
+}

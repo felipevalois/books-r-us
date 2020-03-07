@@ -1,0 +1,33 @@
+@media only screen and (min-width: 1000px) {
+   ion-card{
+      display: flex;
+      justify-content: space-around;
+      height: 50%;
+      width: 40%;
+      margin-left: 30%;
+   }
+}
+
+@media only screen and (max-width: 1000px) {
+   ion-card{
+      display: flex;
+      justify-content: space-around;
+      // height: 80%;
+      padding-bottom: 50px;
+   }
+}
+
+mat-tab-group{
+   height: 80%;
+   width: 80%;
+}
+
+mat-tab-header{
+   justify-content: center;
+}
+
+.buttonIcon {
+   position: absolute;
+   left: 0;
+   margin-left: 2%;
+ }

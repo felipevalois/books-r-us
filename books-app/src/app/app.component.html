@@ -1,0 +1,74 @@
+<ion-app>
+    <ion-router-outlet></ion-router-outlet>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="userDetails()">
+              <div *ngIf="user; else noUser">
+                <div *ngIf="user.photoURL.length > 1; else noImage">
+                  <img style="width: 32px; height: 32px;" src="{{user.photoURL}}">
+                </div>
+                <ng-template #noImage>
+                  <div class="userDetails" style="width: 32px; height: 32px;">
+                    <div class='userx'>{{user.photoURL}}</div> 
+                  </div> 
+                </ng-template>
+              </div> 
+              <ng-template #noUser>
+               <div class="login" style="width: 64px; height: 32px;">
+                  <div class='usery'>LOGIN</div> 
+                </div> 
+              </ng-template>
+             </ion-button>
+          </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    
+    <!-- <ion-header>
+         <ion-toolbar>
+            <ion-title>{{title}}</ion-title>
+            <ion-buttons slot="end">
+               <ng-template *ngIf="user; else notLoggedIn">
+                  <ion-button (click)="userDetails()">
+                     <div *ngIf="user.photoURL.length > 1; else noImage">
+                        <img style="width: 70px; height: 70px;" src="{{user.photoURL}}">
+                     </div>
+                     <ng-template #noImage>
+                        <div class="userDetails">
+                           <div class='userx'>{{user.photoURL}}</div>
+                        </div>
+                     </ng-template>
+                  </ion-button>
+               </ng-template>
+               <ng-template #notLoggedIn>
+                  <ion-button (click)="login()">
+                     <div class="login" style="width: 80px; height: 30px;">
+                        <div class='userx'>Login</div>
+                     </div>
+                  </ion-button>
+               </ng-template>
+            </ion-buttons>
+         </ion-toolbar>
+      </ion-header>
+    -->
+   
+      <ion-tabs>
+         <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="home" (click)=titleHome()>
+               <ion-icon name="home"></ion-icon>
+               <ion-label>Home</ion-label>
+            </ion-tab-button>
+   
+            <ion-tab-button tab="books" (click)=titleBooks()>
+               <ion-icon name="book"></ion-icon>
+               <ion-label>Book List</ion-label>
+            </ion-tab-button>
+   
+            <ion-tab-button tab="cart" (click)=titleCart()>
+               <ion-icon name="cart"></ion-icon>
+               <ion-label>Cart</ion-label>
+            </ion-tab-button>
+         </ion-tab-bar>
+      </ion-tabs>
+   </ion-app>

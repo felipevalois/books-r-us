@@ -1,0 +1,46 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons slot="end">
+        <ion-button (click)="userDetails()">
+          <div *ngIf="user">
+            <div *ngIf="user.photoURL.length > 1; else noImage">
+              <img style="width: 30px; height: 30px;" src="{{user.photoURL}}">
+            </div>
+            <ng-template #noImage>
+              <div class="userDetails" style="width: 30px; height: 30px;">
+                <div class='userx'>{{user.photoURL}}</div> 
+              </div> 
+            </ng-template>
+          </div> 
+         </ion-button>
+         <ion-button (click)="login()">
+          <div *ngIf="!user">
+            <div class="login" style="width: 60px; height: 30px;">
+               <div class='userx'>Login</div> 
+             </div> 
+          </div>
+          </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="books">
+      <ion-icon name="book"></ion-icon>
+      <ion-label>Book List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="cart">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>Cart</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->

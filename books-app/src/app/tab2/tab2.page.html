@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Course Booklist
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Departments</ion-label>
+      <ionic-selectable [items]="depts" name="dept" id="selectable" (onChange)="onChangeDept($event.value)"
+                        [canSearch]="true" interface="alert" placeholder="Select One">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label>Course Number</ion-label>
+      <ionic-selectable #courseselect [items]="courses"
+                        name="Courses"  (onChange)="onChangeCourses($event.value)"
+                        [canSearch]="true" interface="alert" placeholder="Select One">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label>Section</ion-label>
+      <ionic-selectable [items]="sections"
+                        name="Sections" (onChange)="onChangeSection($event.value)"
+                        [canSearch]="true" interface="alert" placeholder="Select One" #sectionselect>
+      </ionic-selectable>
+    </ion-item>
+
+    <!-- 
+       Originally used ion-select however decided to add a custom search bar on top so users can find a selection faster 
+       Using ionic-selectable was a lot easier than trying to implement a search bar with ion-select  
+     -->
+
+    <!-- <ion-item>
+      <ion-label>Departments</ion-label>
+      <ion-select [(ngModel)]="deptSelect" name="dept" id="selectable" (ionChange)="onChangeDept($event.target.value)"
+         interface="alert" placeholder="Select One">
+        <ion-select-option *ngFor="let dept of depts" value="{{dept}}">{{dept}}</ion-select-option>
+      </ion-select>
+    </ion-item> -->
+
+    <!-- <ion-item>
+      <ion-label>Course Number</ion-label>
+      <ion-select [(ngModel)]="courseSelect" name="Courses" id="courses"
+        (ionChange)="onChangeCourses($event.target.value)" interface="alert"
+        placeholder="Select One">
+        <ion-select-option *ngFor="let course of courses" [value]="course">{{course}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Section</ion-label>
+      <ion-select [(ngModel)]="sectionSelect" name="Sections" (ionChange)="onChangeSection($event.target.value)"
+         interface="alert" placeholder="Select One">
+        <ion-select-option *ngFor="let section of sections" [value]="section">{{section}}</ion-select-option>
+      </ion-select>
+    </ion-item> -->
+  </ion-list>
+
+  <div *ngFor="let b of books; let i = index">
+    <div *ngIf="i===0">
+      <ion-toolbar>
+        <ion-title>Course: {{b.className}}
+          <ion-text class="professor">
+            Professor: {{b.professor}}
+          </ion-text>
+        </ion-title>
+      </ion-toolbar>
+    </div>
+
+    <div *ngIf="b.isbn.charAt(0) != 2;">
+      <ion-item>
+        <ion-title size="small">ISBN: {{b.isbn}}</ion-title>
+        <ion-title size="small">Status:
+          <ion-text size="small" *ngIf="b.status == 'Required'" style="color:#ff0000;">{{b.status}}</ion-text>
+          <ion-text size="small" *ngIf="b.status != 'Required'" style="color:#000000;">{{b.status}}</ion-text>
+        </ion-title>
+        <ion-button (click)="getBook(b.isbn)">See Books</ion-button>
+      </ion-item>
+    </div>
+    <!-- <ng-template #no_books>
+      NO BOOKS REQUIRED FOR THIS COURSE
+    </ng-template> -->
+  </div>
+  <ion-spinner *ngIf="showSpinner"></ion-spinner>
+  <div class="container" id="container" *ngIf="items;">
+    <ion-card *ngFor='let item of items'>
+      <ion-card-header>
+        <ion-card-title>{{item.Title}}</ion-card-title>
+      </ion-card-header>
+      <img mat-card-image src='{{item.GalleryURL}}'>
+      <ion-card-content>
+        $ {{item.ConvertedCurrentPrice.Value}} {{item.ConvertedCurrentPrice.CurrencyID}}
+      </ion-card-content>
+      <ion-button full name="add" (click)="addFavorite(item.ItemID)">
+        <ion-icon name="add-circle"></ion-icon> &nbsp;Add to Cart
+      </ion-button>
+    </ion-card>
+  </div>
+
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="login-form">
+    <mat-tab-group>
+      <mat-tab label="Login">
+        <form [formGroup]="loginForm" (ngSubmit)="signInEmailPassword()">
+            <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
+            <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+            <ion-button color="light" expand="full" (click)="signInEmailPassword()" [disabled]="!loginForm.valid">
+               <ion-icon class="buttonIcon" name="mail"></ion-icon> Email Login
+            </ion-button>
+        </form>
+        <ion-button color="danger" style="margin-top:20px;" expand="full" (click)="signInWithGoogle()">
+         <ion-icon class="buttonIcon" name="logo-google"></ion-icon>Google Login
+        </ion-button>
+        <ion-button  expand="full" (click)="signInWithFB()">
+         <ion-icon class="buttonIcon" name="logo-facebook"></ion-icon>Facebook Login
+        </ion-button>
+      </mat-tab> 
+      
+      <mat-tab label="Register">
+          <form [formGroup]="registerForm" (ngSubmit)="register()">
+              <ion-input type="text" formControlName="name" placeholder="Name"></ion-input>
+              <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
+              <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+              <ion-button color="light" expand="full" (click)="register()" [disabled]="!registerForm.valid">Register</ion-button>
+          </form>
+        </mat-tab> 
+    </mat-tab-group>
+  </ion-card>
+
+</ion-content>

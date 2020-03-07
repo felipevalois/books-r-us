@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>user-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="user">{{user.email}}</div>
+  
+  <ion-button (click)="logout()">Sign Out</ion-button>
+</ion-content>

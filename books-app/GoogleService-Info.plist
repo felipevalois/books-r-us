@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>221606464009-0lp76gt07o0vjg8pbujo3fecfq3pk0b7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.221606464009-0lp76gt07o0vjg8pbujo3fecfq3pk0b7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAr-V4bh1q3Pa_7AVlqx5lgaGGfvgCNTz0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>221606464009</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>mizzou.books-r-us</string>
+	<key>PROJECT_ID</key>
+	<string>books-r-us-259602</string>
+	<key>STORAGE_BUCKET</key>
+	<string>books-r-us-259602.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:221606464009:ios:2dd4691cfb07e1169506d8</string>
+	<key>DATABASE_URL</key>
+	<string>https://books-r-us-259602.firebaseio.com</string>
+</dict>
+</plist>

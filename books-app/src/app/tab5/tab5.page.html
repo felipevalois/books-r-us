@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Checkout
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+      
+<ion-content>
+  <ion-spinner *ngIf="showSpinner"></ion-spinner>
+  <div class="container" *ngFor='let item of items'>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title style="align-items: center;">{{item.Title}}</ion-card-title>
+      </ion-card-header>
+      <img style="width: 200px; height: 250px; align-items: center;"  mat-card-image src='{{item.GalleryURL}}'>
+      <ion-card-content>
+        $ {{item.ConvertedCurrentPrice.Value}} {{item.ConvertedCurrentPrice.CurrencyID}}
+      </ion-card-content>
+      <ion-card-content>
+        Condition: {{item.ConditionDisplayName}}
+      </ion-card-content>
+      <ion-card-content>
+        Listing Status: {{item.ListingStatus}}
+      </ion-card-content>
+      <ion-card-content>
+        Bid Count: {{item.BidCount}}
+      </ion-card-content>
+      <ion-button href='{{item.ViewItemURLForNaturalSearch}}'>Buy It Now</ion-button>
+      <br>
+      <ion-button color="danger" full name="add" (click)="deleteFavorite(item.ItemID)">
+        Remove from Cart &nbsp;<ion-icon name="remove-circle"></ion-icon>
+      </ion-button>
+    </ion-card>
+  </div>
+</ion-content>
